@@ -8,7 +8,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import service.SmartRecipeUpdate;
+import be.ac.vub.ois.service.SmartRecipeUpdate;
+
 
 public class SmartRecipeDataDragger {
 

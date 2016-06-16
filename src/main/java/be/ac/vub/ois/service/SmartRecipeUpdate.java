@@ -17,14 +17,14 @@ public class SmartRecipeUpdate implements Runnable {
 	
 	@Override
 	public void run() {
-		String outputLoc = _generateTodaysFileLoc();
+		String outputLoc = generateTodaysFileLoc();
 		
 		new YesterdaysTriplesRetriever().retrieveTriples(INPUT_FILE, outputLoc);
 		new UpdateStardogDb().updateFromFile(outputLoc);
 	}
 
 	/** Generates a different file location for each day. Can be used locally to follow up. */
-	private String _generateTodaysFileLoc() {
+	private String generateTodaysFileLoc() {
 		LocalDate date = LocalDateTime.now().toLocalDate();
 		
 		return new StringBuilder(FILE_PREFIX)

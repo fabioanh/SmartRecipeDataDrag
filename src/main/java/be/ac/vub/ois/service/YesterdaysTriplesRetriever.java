@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.antidot.semantic.rdf.rdb2rdf.main.Db2triples;
+
 /** This class is responsible for fetching yesterdays recipes from the database,
  * 	  and then converting them to triples.
  *  The generator method then stores the triples in a fileLocaction that is passed. */
@@ -15,6 +17,9 @@ public class YesterdaysTriplesRetriever
 	 * @see http://stackoverflow.com/questions/19835244/java-program-that-calls-external-program-behaving-asynchronously*/
 	public void retrieveTriples(String ttlLoc, String fileLoc) 
 	{
+		Db2triples db2triples = new Db2triples();
+		db2triples.main();
+		
 		List<String> command = _createCommand(ttlLoc, fileLoc);
 		
 	    ProcessBuilder pb = new ProcessBuilder(command);
